@@ -120,15 +120,8 @@ header {
 	object-position: center;
 }
 /* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
-/* Gestion des fleches du carrousel */
 #banner .arrow {
     position: absolute;
-    top: 50%; 
-    height: 30px; 
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    transform: translateY(-50%); 
-    z-index: 10; 
 }
 
 #banner .arrow_left {
@@ -139,7 +132,7 @@ header {
     right: 10px;
 }
 
-/* Gestion des points du carrousel */
+
 .dots {
     position: absolute;
     bottom: 40px;
