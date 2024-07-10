@@ -18,7 +18,7 @@ const slides = [
     }
 ];
 
-
+// Initialisation de l'index courant
 let currentIndex = 0;
 
 
@@ -28,6 +28,7 @@ const dotsContainer = document.querySelector('.dots');
 
 
 
+// Écouteurs d'événements pour les flèches de navigation
 prevArrow.addEventListener('click', () => {
    
     console.log('Previous arrow clicked');
@@ -46,7 +47,7 @@ nextArrow.addEventListener('click', () => {
 
 
 
-
+// Création des "dots" 
 const createSliderDots = (parentObject, parentIndex) => {
     parentObject.forEach((_, index) => {
         const dot = document.createElement('span');
@@ -55,6 +56,7 @@ const createSliderDots = (parentObject, parentIndex) => {
             dot.classList.add('dot_selected');
         }
         
+        //Ajout d'evenement dot -> slide correspondante
         dot.addEventListener('click', () => {
             currentIndex = index;
             updateBannerImageAndTagline();
@@ -65,18 +67,18 @@ const createSliderDots = (parentObject, parentIndex) => {
     });
 }
 
+//Rappel de la fonction pour créer les points du caroussel
+createSliderDots(slides, currentIndex);
 
-createSliderDots (slides, currentIndex);
-
-
+// Sélection des éléments pour l'image de la bannière et le tagline
 const bannerImg = document.querySelector('.banner-img');
 const bannerTagLine = document.querySelector('#banner p');
 
-
+// Sélection de toutes les "dots"
 const dots = document.querySelectorAll('.dot');
 
 
-
+// Fonction pour mettre à jour l'image et le tagline de la bannière
 const updateBannerImageAndTagline = () => {
 	bannerImg.src = `./assets/images/slideshow/${slides[currentIndex].image}`;
     bannerTagLine.innerHTML = slides[currentIndex].tagLine;
@@ -86,7 +88,7 @@ const updateBannerImageAndTagline = () => {
 updateBannerImageAndTagline();
 
 
-
+// Fonction pour mettre à jour la sélection visuelle des "dots"
 const updateSelectedDot = () => {
 	console.log(dots);
 	dots.forEach((dot, i) => {
